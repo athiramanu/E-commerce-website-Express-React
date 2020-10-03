@@ -1,0 +1,4 @@
+/projbackend/.env
+/projbackend/node_modules
+/projbackend/package-lock.json
+/test
