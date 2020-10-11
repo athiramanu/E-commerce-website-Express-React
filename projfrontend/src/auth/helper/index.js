@@ -10,7 +10,7 @@ export const signup = user => {
         body: JSON.stringify(user)
     })
     .then(response => {
-        return response.JSON();
+        return response.json();
     })
     .catch(err => console.log(err));
 }
@@ -25,13 +25,13 @@ export const signin = user => {
         body: JSON.stringify(user)
     })
     .then(response => {
-        return response.JSON();
+        return response.json();
     })
     .catch(err => console.log(err));
 }
 
 
-export const authenticaate = (data, next) => {
+export const authenticate = (data, next) => {
     if (typeof window !== 'undefined') {
         localStorage.setItem("jwt", JSON.stringify(data));
         next();

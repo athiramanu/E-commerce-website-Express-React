@@ -9,13 +9,13 @@ export default function Home() {
         <Base title="Home Page">
             <div className="row">
                 <div className="col-4">
-                    <button class="btn btn-success">Test</button>
+                    <button className="btn btn-success">Test</button>
                 </div>
                 <div className="col-4">
-                    <button class="btn btn-success">Test</button>
+                    <button className="btn btn-success">Test</button>
                 </div>
                 <div className="col-4">
-                    <button class="btn btn-success">Test</button>
+                    <button className="btn btn-success">Test</button>
                 </div>
             </div>
         </Base>
