@@ -28,10 +28,10 @@ router.get('/product/photo/:productId', photo);
 router.post('/product/create/:userId', isSignedIn, isAuthenticated, isAdmin, createProduct);
 
 //remove
-router.delete('/product/delete/:productId/:userId', isSignedIn, isAuthenticated, isAdmin, deleteProduct);
+router.delete('/product/:productId/:userId', isSignedIn, isAuthenticated, isAdmin, deleteProduct);
 
 //update
-router.put('/product/delete/:productId/:userId', isSignedIn, isAuthenticated, isAdmin, updateProduct);
+router.put('/product/:productId/:userId', isSignedIn, isAuthenticated, isAdmin, updateProduct);
 
 //listing 
 router.get('/products', getAllProducts);

@@ -15,3 +15,84 @@ export const createCategory = (userId, token, category) => {
     })
     .catch(err => console.log(err));
 }
+//get all categories
+export const getCategories = () => {
+    return fetch(`${API}/categories`, {
+        method: "GET"
+    })
+    .then(response => {
+        return response.json()
+    })
+    .catch(err => console.log(err));
+}
+
+//product calls
+
+//get all products
+export const getProducts = () => {
+    return fetch(`${API}/products`, {
+        method: "GET"
+    })
+    .then(response => {
+        return response.json()
+    })
+    .catch(err => console.log(err));
+}
+
+//create product
+export const createProduct = (userId, token, product) => {
+    return fetch(`${API}/product/create/${userId}`, {
+        method: "POST",
+        headers: {
+            Accept: "application/json",
+            Authorization: `Bearer ${token}`
+        },
+        body: product
+    })
+    .then(response => {
+        return response.json()
+    })
+    .catch(err => console.log(err));
+}
+
+//delete product
+export const deleteProduct = (productId, userId, token) => {
+    return fetch(`${API}/product/${productId}/${userId}`, {
+        method: "DELETE",
+        headers: {
+            Accept: "application/json",
+            Authorization: `Bearer ${token}`
+        }
+    })
+    .then(response => {
+        return response.json()
+    })
+    .catch(err => console.log(err));
+}
+
+//get product
+export const getProduct = productId => {
+    return fetch(`${API}/products/${productId}`, {
+        method: "GET"
+    })
+    .then(response => {
+        return response.json()
+    })
+    .catch(err => console.log(err));
+}
+
+//update product
+export const updateProduct = (productId, userId, token, product) => {
+    return fetch(`${API}/product/${productId}/${userId}`, {
+        method: "PUT",
+        headers: {
+            Accept: "application/json",
+            Authorization: `Bearer ${token}`
+        },
+        body: product
+    })
+    .then(response => {
+        return response.json()
+    })
+    .catch(err => console.log(err));
+}
