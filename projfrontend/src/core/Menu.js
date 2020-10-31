@@ -20,7 +20,7 @@ const Menu = ({history}) => (
                 <Link style={currentTab(history, "/cart")} className="nav-link" to="/cart">Cart</Link>
             </li>
             <li className="nav-item">
-                <Link style={currentTab(history, "/user/dashboard")} className="nav-link" to="/user/dashboard">Dashboard</Link>
+                <Link style={currentTab(history, "/user/dashboard")} className="nav-link" to="/user/dashboard">U. Dashboard</Link>
             </li>
             <li className="nav-item">
                 <Link style={currentTab(history, "/admin/dashboard")} className="nav-link" to="/admin/dashboard">A. Dashboard</Link>
