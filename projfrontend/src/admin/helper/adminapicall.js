@@ -72,7 +72,7 @@ export const deleteProduct = (productId, userId, token) => {
 
 //get product
 export const getProduct = productId => {
-    return fetch(`${API}/products/${productId}`, {
+    return fetch(`${API}/product/${productId}`, {
         method: "GET"
     })
     .then(response => {

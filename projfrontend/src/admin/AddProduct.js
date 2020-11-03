@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Base from "../core/Base";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { getCategories, createProduct } from './helper/adminapicall';
 import { isAuthenticated } from "../auth/helper";
 
@@ -72,6 +72,13 @@ const AddProduct = () => {
                     loading: false,
                     createdProduct: data.name
                 })
+
+                setTimeout(function(){
+                    setValues({
+                        ...values,
+                        getRedirect: true
+                    })
+                }, 2000);
             }
         })
     };
@@ -98,6 +105,12 @@ const AddProduct = () => {
         </div>;
     }
 
+    const renderRedirect = () => {
+        if (values.getRedirect) {
+          return <Redirect to='/admin/dashboard' />
+        }
+    }
+      
     const createProductForm = () => (
         <form>
             <span>Post photo</span>
@@ -180,6 +193,7 @@ const AddProduct = () => {
             description="Welcome to product creation section"
             className="container bg-info p-4"
         >
+            {renderRedirect()}
             <Link to="/admin/dashboard" className="btn btn-md btn-dark mb-3">Admin Home</Link>
             <div className="row bg-dark text-white rounded">
                 <div className="col-md-8 offset-md-2">
