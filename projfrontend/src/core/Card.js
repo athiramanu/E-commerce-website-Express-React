@@ -26,9 +26,9 @@ const Card = ({
         }
     }
     
-    const showAddToCart = (addToCart) => {
+    const showAddToCart = (addtoCart) => {
         return (
-            addToCart && (
+            addtoCart && (
                 <button
                     onClick={addToCart}
                     className="btn btn-block btn-outline-success mt-2 mb-2"
@@ -64,7 +64,7 @@ const Card = ({
             <p className="btn btn-success rounded  btn-sm px-4">$ {cardPrice}</p>
             <div className="row">
             <div className="col-12">
-                { showAddToCart(addToCart) }
+                { showAddToCart(addtoCart) }
             </div>
             <div className="col-12">
                 { showRemoveFromCart(removeFromCart) }
