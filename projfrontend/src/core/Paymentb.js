@@ -21,7 +21,6 @@ const Paymentb = ({ products, setReload = f => f, reload = undefined }) => {
 
     const getToken = (userId, token) => {
         getmeToken(userId, token).then(info => {
-            console.log("INFO", info)
             if (info.error) {
                 setInfo({...info, error: info.error})
             } else {
@@ -67,9 +66,16 @@ const Paymentb = ({ products, setReload = f => f, reload = undefined }) => {
             processPayment(userId, token, paymentData)
             .then(response => {
                 setInfo({...info, success: response.success, loading: false})
-                console.log("sucee")
-                //Empty cart
-                //force reload
+                const orderData = {
+                    products: products,
+                    transaction_id: response.transaction.id,
+                    amount: response.transaction.amount
+                }
+                createOrder(userId, token, orderData);
+                cartEmpty(() => {
+                    
+                })
+                setReload(!reload);
             })
             .catch(
                 setInfo({loading: false, success: false})

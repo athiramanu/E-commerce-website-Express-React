@@ -10,6 +10,6 @@ export const createOrder = (userId, token, orderData) => {
         },
         body: JSON.stringify({order: orderData})
     }).then(response => {
-        return Response.json()
+        return response.json()
     }).catch(err => console.log(err))
 }
